@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11826,28 +11826,28 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
 <span class="c1">#目标：计算价值的最小值</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
 <span class="c1">#目标：计算价值的最大值</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
 <span class="c1">#目标：计算价值的平均值</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
 <span class="c1">#目标：计算价值的中值</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
 <span class="c1">#目标：计算价值的标准差</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="c1">#目标：输出计算的结果</span>
@@ -11875,7 +11875,7 @@ Minimum price: $105,000.00
 Maximum price: $1,024,800.00
 Mean price: $454,342.94
 Median price $438,900.00
-Standard deviation of prices: $165,340.28
+Standard deviation of prices: $165,171.13
 </pre>
 </div>
 </div>
@@ -11932,7 +11932,7 @@ Standard deviation of prices: $165,340.28
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>回答: </strong> RM:若该地区房屋的总面积相似，则RM在一定范围内增加，说明房屋设计或者装修时，空间利用更加合理，MEDV应该会增大。但是当RM过高时，意味着房屋中有大量隔断，MEDV很有可能反而会降低。若该地区的房屋总面积是随机的，则RM越高，说明该房屋的面积越大，MEDV当然也会相应增大。
+<p><strong>回答: </strong> RM:RM越高，说明该房屋的可用面积越大，那么随着RM增大，相应的MEDV当然也会增大。
 LSTAT：LSTAT越高，说明该区域能提供的高薪工作机会越低，而在开放市场中，任何一个地区的房价往往和该地区所能提供的高薪工作机会数量是正相关的，所以LSTAT越高，则MEDV应该会减小
 PTRATTO:PTRATTO越高，说明该地区的教育资源越紧张，对于重视教育资源的购房者而言，会相对缺乏吸引力。故随着PTRATTO增大，MEDV应该会在一定程度上减小</p>
 
@@ -12064,7 +12064,7 @@ PTRATTO:PTRATTO越高，说明该地区的教育资源越紧张，对于重视�
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>回答:</strong>决定系数R^2值为0.923，已经很接近1，意味着90%以上的预测是正确的，所以我认为这个模型已经相对成功地描述了目标变量的变化</p>
+<p><strong>回答:</strong>决定系数R^2值为0.923，已经很接近1，说明模型自变量对因变量的解释程度很高，自变量引起的变动占总变动的百分比高。观察点在回归直线附近非常密集。所以我认为这个模型已经相对成功地描述了目标变量的变化</p>
 
 </div>
 </div>
@@ -14919,6 +14919,8 @@ Range in prices: $73,357.39
  2. 模型中仅仅提供了三个特征，是不足以完整地描述一个房屋的。此外比如社区治安状况，附近交通情况，生活环境等特征也会影响房屋的房价
  3. 从上面的敏感度测试来看，模型的预测还是会随着训练数据的变化出现比较大的波动，故我认为模型是不够健壮的
  4. 波士顿这样的大都市影响房价的很多特征和乡镇是不同的，比如乡镇往往不会有很明显的富人区和学区，故在波士顿这样的大城市采集的数据，在其他乡镇地区是不适用的。
+ 
+ 综上所述，我认为这次所构建的模型是不适合在现实世界中使用的
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
